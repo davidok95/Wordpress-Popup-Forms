@@ -2,6 +2,7 @@
 	$("#davidok95-callback").dialog({
 		autoOpen: false,
 		width: "310px",
+	    'z-index': "1000",
 		open: function(event, ui) {
 			$(".ui-widget-overlay").removeClass("ui-helper-hidden");
 		},
@@ -60,6 +61,7 @@
 	});
 	$(".davidok95-callback-open").on("click", function() {
 		$("#davidok95-callback").dialog("open");
+		return false;
 	});
 }); })(jQuery);
 

@@ -16,7 +16,7 @@ if ( ! class_exists("Davidok95Callback"))
 
 		public static function init()
 		{
-			add_action("before_wp_footer", array(__CLASS__, "show"), 10);
+			add_action("wp_footer", array(__CLASS__, "show"), 10);
 			self::$pluginUrl = plugin_dir_url(__FILE__);
 			add_action( 'wp_enqueue_scripts', array(__CLASS__, "include_css"));
 			add_action( 'wp_enqueue_scripts', array(__CLASS__, "include_js"));
