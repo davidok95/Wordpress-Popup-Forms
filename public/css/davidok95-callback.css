@@ -1,0 +1,43 @@
+.davidok95-callback__input-container {
+	margin-bottom: 10px;
+}
+.davidok95-callback__input-container +
+.davidok95-callback__input-container {
+	margin-bottom: 0;
+}
+.davidok95-callback__form {
+	margin-bottom: 0;
+}
+.davidok95-callback__input {
+	width: 100%;
+	padding: 5px;
+	font: normal normal 18px/100% Arial !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.davidok95-callback__label {
+	font: normal normal 16px/100% Arial !important;
+}
+.davidok95-callback__label span {
+	color: red;
+}
+.ui-widget-overlay {
+	z-index: 100;
+}
+.ui-widget-content {
+}
+.davidok95-callback .ui-state-error {
+	background: white!important;
+	color: #000 !important;
+}
+.davidok95-callback__input {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 95%;
+	margin-top: 5px;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	margin-top: 0;
+}
