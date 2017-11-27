@@ -3,6 +3,10 @@
 		autoOpen: false,
 		width: "310px",
 	    'z-index': "1000",
+		create: function( event, ui ) {
+			$('.ui-dialog').wrap('<div class="davidok95-scope" style="position: relative; z-index: 1000"></div>');
+			$('.ui-widget-overlay').wrap('<div class="davidok95-scope" style="position: relative; z-index: 1000"></div>');
+		},
 		open: function(event, ui) {
 			$(".ui-widget-overlay").removeClass("ui-helper-hidden");
 		},
@@ -42,7 +46,6 @@
 						sendVars[formVals[i].name] = formVals[i].value;
 
 					$.post(my_ajax_obj.ajax_url, sendVars, function(data) {
-						console.log(data);
 						$("#davidok95-callback").dialog("close");
 						$("#davidok95-callback-result").dialog("open");
 					});
@@ -50,17 +53,32 @@
 			}
 		],
 	});
+
 	$("#davidok95-callback-result").dialog({
 		autoOpen: false,
+	    'z-index': "1000",
+		width: "310px",
+		create: function( event, ui ) {
+			$('#davidok95-callback-result').closest('.ui-dialog').wrap('<div class="davidok95-scope davidok95-scope-result" style="display: none; position: fixed; z-index: 1000; top: 0; left:0; width: 100%; height: 100%;"></div>');
+			$('.ui-widget-overlay').wrap('<div class="davidok95-scope" style="position: relative; z-index: 1000"></div>');
+		},
 		open: function(event, ui) {
 			$(".ui-widget-overlay").removeClass("ui-helper-hidden");
+			$('.davidok95-scope-result').fadeIn(0);
 		},
 		close: function( event, ui ) {
 			$(".ui-widget-overlay").addClass("ui-helper-hidden");
+			$(".davidok95-scope").addClass("ui-helper-hidden");
 		}
 	});
+
 	$(".davidok95-callback-open").on("click", function() {
 		$("#davidok95-callback").dialog("open");
+
+		if (my_ajax_obj.add_button_text_to_message == "Y") {
+			$('#davidok95-callback [name=ADD_BUTTON_TEXT]').val($(this).text());
+		}
+
 		return false;
 	});
 }); })(jQuery);

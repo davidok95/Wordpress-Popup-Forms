@@ -47,3 +47,11 @@
 .ui-widget-overlay {
 	z-index: 1000;
 }
+#davidok95-callback-result p {
+	font-size: 20px;
+	text-align: center;
+}
+.davidok95-scope .ui-draggable .ui-dialog-titlebar {
+	text-align: center;
+	padding-left: 34px;
+}
